@@ -6,10 +6,13 @@ def index(request):
     return render(request,'index.html')
 
 
-def sumCal(request):
-    firstNumber=request.GET.get('firstNumber','0')
-    secondNumber=request.GET.get('secondNumber','0')
-    add=int(firstNumber)+int(secondNumber)
-    my_result={"ans":add}
-    
-    return render(request,'index.html',my_result)
+def analyzer(request):
+    userText=request.GET.get('userText','Default')
+    upperCaseYes=request.GET.get('upperCaseYes','Default')
+    lowerCaseYes=request.GET.get('lowerCaseYes','Default')
+    if upperCaseYes=='on':
+        a=userText.upper()
+    elif lowerCaseYes=='on':
+        b=userText.lower()
+    all_result={'upercase':a,'default':" ",'lowercase':b}
+    return render(request,'index.html', all_result)

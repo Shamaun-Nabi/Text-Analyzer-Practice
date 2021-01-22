@@ -48,25 +48,35 @@
         <strong>Welocme to Analyzie Text!</strong> You should check in on some of those fields below.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
+
+      <!-------------------------------- FORM AREA------------------------------------- -->
+
+
+      <form action="analyzer" method="get">
       <div class="mb-3 container p-4">
         <label for="exampleFormControlTextarea1" class="form-label">
             <h3>Input Your text Here</h3>
         </label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+        <textarea name="userText" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            <label class="form-check-label" for="flexSwitchCheckChecked"><h6>Make Upper Case</h6></label>
+            <input name="upperCaseYes" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+            <label class="form-check-label" for="flexSwitchCheckChecked"><h6>Make UPPER CASE</h6></label>
           </div>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-            <label class="form-check-label" for="flexSwitchCheckChecked"><h6>Make Lower Case</h6></label>
+            <input name="lowerCaseYes" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+            <label class="form-check-label" for="flexSwitchCheckChecked"><h6>Make lower case</h6></label>
           </div>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            <input name="removePunc" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
             <label class="form-check-label" for="flexSwitchCheckChecked"><h6>Remove Punctuations</h6></label>
           </div>
-          <button type="button" class="btn btn-dark">Analyze Your Text</button>
+          <button name="analyzer" type="submit" class="btn btn-dark">Analyze Your Text</button>
       </div>
+    </form>
+    <div class="alert alert-info container" role="alert">
+        <h3>Your Text : {{upercase}} {{lowercase}}</h3>
+      </div>
+
      
     
     
