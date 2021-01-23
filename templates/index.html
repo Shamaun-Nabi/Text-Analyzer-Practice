@@ -52,7 +52,8 @@
       <!-------------------------------- FORM AREA------------------------------------- -->
 
 
-      <form action="analyzer" method="get">
+      <form action="analyzer" method="post">
+        {% csrf_token %}
       <div class="mb-3 container p-4">
         <label for="exampleFormControlTextarea1" class="form-label">
             <h3>Input Your text Here</h3>
@@ -74,7 +75,7 @@
       </div>
     </form>
     <div class="alert alert-info container" role="alert">
-        <h3><pre>{{convert}}  </pre></h3>
+        <h3><pre>{{convert}}</pre></h3>
       </div>
 
      

@@ -7,11 +7,12 @@ def index(request):
 
 
 def analyzer(request):
-    userText=request.GET.get('userText','default')
+
+    userText=request.POST.get('userText','default')
     print(userText)
-    upperCaseYes=request.GET.get('upperCaseYes','off')
+    upperCaseYes=request.POST.get('upperCaseYes','off')
     print(upperCaseYes)
-    lowerCaseYes=request.GET.get('lowerCaseYes','off')
+    lowerCaseYes=request.POST.get('lowerCaseYes','off')
     print(lowerCaseYes)
     if upperCaseYes=='on':
         abc=''
@@ -25,6 +26,4 @@ def analyzer(request):
             abc=abc+char.lower()
         param={'convert':abc}
         userText=abc
-    
-    
     return render(request,'index.html',param)
