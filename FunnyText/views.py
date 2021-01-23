@@ -35,4 +35,8 @@ def analyzer(request):
                 abc= abc + char
         param={'convert':abc}
         userText=abc
+    if upperCaseYes!='on' and lowerCaseYes!='on' and removepunc!='on':
+        abc="No input given"
+        param={'convert':abc}
+        userText=abc
     return render(request,'index.html',param)
